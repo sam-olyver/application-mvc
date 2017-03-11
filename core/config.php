@@ -7,12 +7,11 @@
 define( 'ABSPATH', dirname( __FILE__ ) );
  
 // Caminho para a pasta de uploads
-define( 'UP_ABSPATH', ABSPATH . '/views/_uploads' );
+define( 'UP_ABSPATH', ABSPATH . '/assets/_midia/_uploads' );
  
 // URL da home - http://127.0.0.1/Cursos/crud
-define( 'HOME_URI', 'http://localhost/github/application/views/home.php' );
+define( 'HOME_URI', 'http://localhost/github/application/views/welcome-app.php' );
  
-// Nome do host da base de dados
 
 /*
 	Servidor: Local Databases (127.0.0.1 via TCP/IP)
@@ -28,11 +27,13 @@ define( 'HOME_URI', 'http://localhost/github/application/views/home.php' );
 	Extensão de PHP: mysqliDocumentação curlDocumentação mbstringDocumentação
 	versão do PHP: 5.6.25
 	*/
+	
+// Nome do host da base de dados
 
 define( 'DB_HOSTNAME', 'localhost' );
  
 // Nome do DB
-define( 'DB_DATABASE', 'teste_estagio' );
+define( 'DB_DATABASE', 'app_mvc' );
  
 // Usuário do DB
 define( 'DB_USERNAME', 'root' );

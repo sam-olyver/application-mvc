@@ -1,0 +1,34 @@
+1) o arquivo 'index.php' carrega o arquivo 'core/config.php', nele esta as 
+configurações basicas do sistema e carrega o arquivo 'core/loader.php'que ira 
+iniciar uma sessao e carregar a classe 'AppMvc'
+
+2) a classe 'AppMvc' ira carregar o controlador 'home-controller' e chamar o metodo 'index()'. O controlador 'home-controller' extende a classe 'MainController' e 'UserLogin'. A classe 'MainController' irá instanciar um objeto da classe 'AppDbPdo' que fará conexao com a base de dados através de conexao 'pdo'.
+
+3) será efetuada a conexao com a base dados. configurações basicas da aplicação. três objetos foram instanciados, referentes as classes 'AppMvc', 'home-controller', 'AppDbPdo' e foram estendidas as classes 'MainController' e 'UserLogin'.  
+
+4) se tudo estiver correto o metodo 'index()' ira carregar a view solicitada.
+
+boot: 
+	index->
+		core->
+			@config.php
+			@loader.php
+
+		models->
+			classes->
+				@AppMvc.php	
+				@MainController.php
+				@AppDbPdo.php
+				@UserLogin.php
+
+		controllers->
+			@home-controller.php	
+
+		viwes->
+			_includes->
+				@footer.php
+				@head.php
+				@menu.php
+				
+			home->
+				@home-view.php		

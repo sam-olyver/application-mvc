@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-			
-	<?php require_once 'template-parts/_head.php' ?>
+<?php if ( ! defined('ABSPATH')) exit; ?>
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
+        
         <style>
             html, body {
                 height: 100%;
@@ -35,13 +32,15 @@
                 font-size: 96px;
             }
         </style>
+</head>        
+<body>
+<?php 
+    // /views/_includes/menu.php
+    require ABSPATH . '/../views/_includes/_menu.php';
 
-  </head>
-  <body>
+?>
     <div class="container-app">
-            <div class="content">
-                <div class="title">APP - MVC</div>
-            </div>
-        </div>
-  </body>
-</html>
+       	<div class="content">
+           	<div class="title">APP - MVC</div>
+    	</div>
+    </div>

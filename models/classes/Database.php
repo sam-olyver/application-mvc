@@ -1,12 +1,17 @@
 <?php
-	
+/**
+ * Database - Classe para gerenciamento da base de dados (mysqli)
+ *
+ * @package AppMvc
+ * @since 0.1
+ */	
 	class Database 
 	{
 		private $connect;
 
 		function __construct()
 		{//a definir
-			require_once 'core/config.php';
+			
 		}
 
 		//####### CONEXAO #######
