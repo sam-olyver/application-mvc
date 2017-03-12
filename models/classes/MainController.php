@@ -6,7 +6,7 @@
  * @since 0.1
  */
 
-require_once ABSPATH . '/../models/classes/UserLogin.php';
+require_once ABSPATH . '/models/classes/UserLogin.php';
 
 class MainController extends UserLogin
 {
@@ -76,12 +76,12 @@ class MainController extends UserLogin
 	
 		// Instancia do DB
 
-		require_once ABSPATH . '/../models/classes/AppDbPdo.php';
+		require_once ABSPATH . '/models/classes/AppDbPdo.php';
 
 		$this->db = new AppDbPdo();
 		
 		// Phpass
-		require_once ABSPATH . '/../models/classes/PasswordHash.php';
+		require_once ABSPATH . '/models/classes/PasswordHash.php';
 		$this->phpass = new PasswordHash(8, false);
 		
 		// Parâmetros
@@ -141,6 +141,10 @@ class MainController extends UserLogin
 		
 	} // load_model
 
-	
+	//retorna o atributos title
+    public function getTitle()
+	{
+		return $this->title;
+	}
 
 } // class MainController

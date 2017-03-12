@@ -2,8 +2,7 @@
 <html lang="pt-br">
   <head>
 			
-	<?php require_once 'template-parts/_head.php' ?>
-
+	
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
         <style>

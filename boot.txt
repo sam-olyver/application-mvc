@@ -2,14 +2,14 @@
 configurações basicas do sistema e carrega o arquivo 'core/loader.php'que ira 
 iniciar uma sessao e carregar a classe 'AppMvc'
 
-2) a classe 'AppMvc' ira carregar o controlador 'home-controller' e chamar o metodo 'index()'. O controlador 'home-controller' extende a classe 'MainController' e 'UserLogin'. A classe 'MainController' irá instanciar um objeto da classe 'AppDbPdo' que fará conexao com a base de dados através de conexao 'pdo'.
+2) a classe 'AppMvc' ira carregar o controlador 'home-controller' e chamar o metodo 'index()'. O controlador 'home-controller' extende a classe 'MainController' e 'UserLogin'. A classe 'MainController' irá instanciar um objeto da classe 'AppDbPdo' que fará a configuração de conexao com a base de dados através de conexao 'pdo'.
 
-3) será efetuada a conexao com a base dados. configurações basicas da aplicação. três objetos foram instanciados, referentes as classes 'AppMvc', 'home-controller', 'AppDbPdo' e foram estendidas as classes 'MainController' e 'UserLogin'.  
+3) Configurações basicas da aplicação. cinco objetos foram instanciados, referentes as classes 'AppMvc', 'home-controller', 'AppDbPdo', 'PasswordHash', um objeto 'PDO' (de conexão) e foram estendidas as classes 'MainController' e 'UserLogin'.  
 
 4) se tudo estiver correto o metodo 'index()' ira carregar a view solicitada.
 
 boot: 
-	index->
+	index.php->
 		core->
 			@config.php
 			@loader.php
@@ -20,6 +20,7 @@ boot:
 				@MainController.php
 				@AppDbPdo.php
 				@UserLogin.php
+				@PasswordHash.php
 
 		controllers->
 			@home-controller.php	
@@ -32,3 +33,35 @@ boot:
 				
 			home->
 				@home-view.php		
+
+	DEBUG: (var_dump)
+		->
+		object(AppMvc)[1]
+		  private 'controlador' => 
+		    object(HomeController)[2]
+		      public 'db' => 
+		        object(AppDbPdo)[3]
+		          public 'pdo' => 
+		            object(PDO)[4]
+		              ...
+		          public 'error' => null
+		          public 'debug' => boolean true
+		          public 'last_id' => null
+		      public 'phpass' => 
+		        object(PasswordHash)[5]
+		          public 'itoa64' => string './0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz' (length=64)
+		          public 'iteration_count_log2' => int 8
+		          public 'portable_hashes' => boolean false
+		          public 'random_state' => string '0.46974600 148933010410572' (length=26)
+		      public 'title' => string 'Home' (length=4)
+		      public 'login_required' => boolean false
+		      public 'permission_required' => string 'any' (length=3)
+		      public 'parametros' => 
+		        array (size=0)
+		          empty
+		      public 'logged_in' => null
+		      public 'userdata' => null
+		      public 'login_error' => null
+		  private 'acao' => null
+		  private 'parametros' => null
+		  private 'not_found' => string '/views/404.php' (length=14)			

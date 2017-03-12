@@ -7,10 +7,9 @@
 define( 'ABSPATH', dirname( __FILE__ ) );
  
 // Caminho para a pasta de uploads
-define( 'UP_ABSPATH', ABSPATH . '/assets/_midia/_uploads' );
+define( 'UP_ABSPATH', ABSPATH . '/../assets/_midia/_uploads' );
  
-// URL da home - http://127.0.0.1/Cursos/crud
-define( 'HOME_URI', 'http://localhost/github/application/views/welcome-app.php' );
+define( 'HOME_URI',  '/github/application-mvc' );
  
 
 /*

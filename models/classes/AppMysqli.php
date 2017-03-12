@@ -1,11 +1,11 @@
 <?php
 /**
- * Database - Classe para gerenciamento da base de dados (mysqli)
+ * AppMysqli - Classe para gerenciamento da base de dados (mysqli)
  *
  * @package AppMvc
  * @since 0.1
  */	
-	class Database 
+	class AppMysqli 
 	{
 		private $connect;
 

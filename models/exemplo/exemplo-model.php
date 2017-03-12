@@ -12,6 +12,7 @@ class ExemploModel extends MainModel
 	 * @param object $controller Objeto do controlador
 	 */
 	public function __construct( $db = false, $controller = null ) {
+		
 		// Configura o DB (PDO)
 		$this->db = $db;
 		

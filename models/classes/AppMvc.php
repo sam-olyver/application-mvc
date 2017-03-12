@@ -66,7 +66,7 @@ class AppMvc
 		if ( ! $this->controlador ) {
 			
 			// Adiciona o controlador padrão
-			require_once ABSPATH . '/../controllers/home-controller.php';
+			require_once ABSPATH . '/controllers/home-controller.php';
 			// Cria o objeto do controlador "home-controller.php"
 			// Este controlador deverá ter uma classe chamada HomeController
 			$this->controlador = new HomeController();
@@ -82,7 +82,7 @@ class AppMvc
 		// Se o arquivo do controlador não existir, não faremos nada
 		if ( ! file_exists( ABSPATH . '/controllers/' . $this->controlador . '.php' ) ) {
 			// Página não encontrada
-			require_once ABSPATH . $this->not_found;
+			require_once ABSPATH . '' . $this->not_found;
 			
 			// FIM :)
 			return;

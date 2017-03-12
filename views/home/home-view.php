@@ -36,7 +36,7 @@
 <body>
 <?php 
     // /views/_includes/menu.php
-    require ABSPATH . '/../views/_includes/_menu.php';
+    require ABSPATH . '/views/_includes/_menu.php';
 
 ?>
     <div class="container-app">
@@ -44,3 +44,11 @@
            	<div class="title">APP - MVC</div>
     	</div>
     </div>
+   <a href="<?php echo HOME_URI;?>/exemplo/" class="btn btn-default">Exemplo</a>
+<?php 
+    // var_dump(ABSPATH);
+    // var_dump(UP_ABSPATH);
+    // var_dump(HOME_URI);
+    // var_dump(HOME_URI . '/views/exemplo/');
+
+?>
