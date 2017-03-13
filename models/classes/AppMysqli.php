@@ -17,7 +17,7 @@
 		//####### CONEXAO #######
 
 		//define os dados de conexao
-		private function setConnect($host, $user, $password, $database, $charset)
+		private function data_connect($host, $user, $password, $database, $charset)
 		{
 			define('DB_HOSTNAME', $host);
 			define('DB_USERNAME', $user);

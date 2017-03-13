@@ -7,26 +7,10 @@
 define( 'ABSPATH', dirname( __FILE__ ) );
  
 // Caminho para a pasta de uploads
-define( 'UP_ABSPATH', ABSPATH . '/../assets/_midia/_uploads' );
+define( 'UP_ABSPATH', ABSPATH . '/assets/_midia/_uploads' );
  
 define( 'HOME_URI',  '/github/application-mvc' );
- 
-
-/*
-	Servidor: Local Databases (127.0.0.1 via TCP/IP)
-	Tipo de servidor: MySQL
-	Versão do servidor: 5.7.14 - MySQL Community Server (GPL)
-	Versão do protocolo: 10
-	Utilizador: root@localhost
-	Conjunto de caracteres do servidor: UTF-8 Unicode (utf8)
-
-	##########################################################
-	Apache/2.4.23 (Win64) PHP/5.6.25 (PHP/7.0.10 DISPONIVEL)
-	Versão do cliente de base de dados: libmysql - mysqlnd 5.0.11-dev - 20120503 - $Id: 76b08b24596e12d4553bd41fc93cccd5bac2fe7a $
-	Extensão de PHP: mysqliDocumentação curlDocumentação mbstringDocumentação
-	versão do PHP: 5.6.25
-	*/
-	
+ 	
 // Nome do host da base de dados
 
 define( 'DB_HOSTNAME', 'localhost' );
