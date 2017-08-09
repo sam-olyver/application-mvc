@@ -5,11 +5,11 @@
  * @package AppMvc
  * @since 0.1
  */
-class AppDbPdo
+class FlowPdo
 {
 	/** DB properties */
-	public $host      = 'localhost', // Host da base de dados 
-	       $db_name   = 'app_mvc',    // Nome do banco de dados
+	private $host      = 'localhost', // Host da base de dados 
+	       $db_name   = 'sisaba',    // Nome do banco de dados
 	       $password  = '',          // Senha do usuário da base de dados
 	       $user      = 'root',      // Usuário da base de dados
 	       $charset   = 'utf8',      // Charset da base de dados
@@ -30,25 +30,8 @@ class AppDbPdo
 	 * @param string $charset
 	 * @param string $debug
 	 */
-	public function __construct(
-		$host     = null,
-		$db_name  = null,
-		$password = null,
-		$user     = null,
-		$charset  = null,
-		$debug    = null
-	) {
-	
-		// Configura as propriedades novamente.
-		// Se você fez isso no início dessa classe, as constantes não serão
-		// necessárias. Você escolhe...
-		$this->host     = defined('DB_HOSTNAME') ? DB_HOSTNAME : $this->host;
-		$this->db_name  = defined('DB_DATABASE') ? DB_DATABASE : $this->db_name;
-		$this->password = defined('DB_PASSWORD') ? DB_PASSWORD : $this->password;
-		$this->user     = defined('DB_USERNAME') ? DB_USERNAME : $this->user;
-		$this->charset  = defined('DB_CHARSET' ) ? DB_CHARSET  : $this->charset;
-		$this->debug    = defined('DEBUG'	   ) ? DEBUG       : $this->debug;
-	
+	public function __construct() 
+	{
 		// Conecta
 		$this->connect();
 		

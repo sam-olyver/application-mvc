@@ -6,7 +6,7 @@
  * @since 0.1
  */
 
-require_once ABSPATH . '/models/classes/MainController.php';
+require_once ABSPATH . '/models/core_mvc/MainController.class.php';
 
 class HomeController extends MainController
 {
@@ -27,14 +27,14 @@ class HomeController extends MainController
 		/** Carrega os arquivos do view **/
 		
 		// /views/_includes/header.php
-        require ABSPATH . '/views/_includes/_head.php';
+        require ABSPATH . '/views/home/_includes/_head.php';
 		
 		
 		// /views/home/home-view.php
         require ABSPATH . '/views/home/home-view.php';
 		
 		// /views/_includes/footer.php
-        require ABSPATH . '/views/_includes/_footer.php';
+        require ABSPATH . '/views/home/_includes/_footer.php';
 		
     } // index
 	

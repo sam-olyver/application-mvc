@@ -21,9 +21,8 @@ if ( ! defined('DEBUG') || DEBUG === false ) {
 }
  
 // Funções globais
-require_once ABSPATH . '/models/functions/global-functions.php';
-
-require_once '/models/classes/AppMvc.php';
+require_once ABSPATH . '/models/features_system/global-functions.php';
+require_once ABSPATH . '/models/core_mvc/AppMvc.class.php';
  
 // Carrega a aplicação
 $AppMvc = new AppMvc();

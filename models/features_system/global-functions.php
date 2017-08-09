@@ -27,41 +27,55 @@ function chk_array ( $array, $key ) {
  * Por exemplo: para a classe AppMvc, o arquivo vai chamar AppMvc.class.php.
  * Por hora deixaremos AppMvc.php.
  */
-function __autoload($class_name) {
+spl_autoload_extensions('.php, .class.php');
+spl_autoload_register('autoloader');
 
+function file_extension($file, $extension_name){
 	
+	//verifica se a extensao existe, senao troca pela segunda extensao
+	if( ! file_exists( $file . $extension_name) )
+		$class_bollean = false;
+	else
+		$class_bollean = true;	
+
+	$extension_name = ($class_bollean) ? '.php' : '.class.php';
+
+	return $extension_name;
+}
+//PROBLEMAS COM AUTOLOADER, ERRO NO REQUIRE_ONCE E INSTRUÇÕES
+function autoloader($class_name) {
+
+
 	//$file = ABSPATH . '/models/classes/' . $class_name . '.php';
 	/**
 	 * monta o caminho até o diretorio e a extensao do arquivo
 	 * str_replace — Substitui todas as ocorrências da string de procura com a string de substituição. 
 	 * Adiciona barras para servidores windows ou linux, nao testado ainda...
 	 */
-	$file = str_replace('\\', '/', ABSPATH . '/models/classes/' . $class_name);
+
 
 	//extensao do arquivo
-	$class_extension = '.php';
-	
-	//verifica se a extensao existe, senao troca pela segunda extensao
-	if( ! file_exists( $file . $class_extension) )
-	{
-		$class_bollean = false;
-	}
-	else
-	{	
-		$class_bollean = true;	
-	}
-
-	$class_extension = ($class_bollean) ? '.php' : '.class.php';
-
+	$dir = 'core_mvc';
+	$file = str_replace('\\', '/', ABSPATH . "/models/{$dir}/" . $class_name);
+	$class_extension = file_extension($file, '.php');
 	$file .=  $class_extension;
-
-	if ( ! file_exists( $file ) ) 
+	var_dump($file);
+	if ( ! file_exists( $file ) )
 	{
-		require_once ABSPATH . '/includes/404.php';
-		return;
+		$dir = 'classes';
+		$file = str_replace('\\', '/', ABSPATH . "/models/{$dir}/" . $class_name);
+		$class_extension = file_extension($file, '.php');
+		$file .=  $class_extension;
+		var_dump($file);
+
 	}
-	
+	else 
+		{
+			require_once ABSPATH . '/views/404.php';
+			return;
+		}	
 	// Inclui o arquivo da classe
     require_once $file;
 } // __autoload
+
 

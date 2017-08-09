@@ -76,9 +76,9 @@ class MainController extends UserLogin
 	
 		// Instancia do DB
 
-		require_once ABSPATH . '/models/classes/AppDbPdo.php';
+		require_once ABSPATH . '/models/classes/FlowPdo.class.php';
 
-		$this->db = new AppDbPdo();
+		$this->db = new FlowPdo();
 		
 		// Phpass
 		require_once ABSPATH . '/models/classes/PasswordHash.php';
