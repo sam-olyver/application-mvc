@@ -1,47 +1,11 @@
 <?php if ( ! defined('ABSPATH')) exit; ?>
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
-        
-        <style>
-            html, body {
-                height: 100%;
-            }
+<div class="wrap">
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato', sans-serif;
-            }
+	<p>Olá, <br>
+	Se você está visualizando esta página, seu sistema PHP com padrão MVC está funcionando.</p>
 
-            .container-app {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
+	<p>Não deixe de visitar nosso site para dicas <a href="http://www.tutsup.com">tutsup.com</a>.
 
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-
-    <div class="container-app">
-       	<div class="content">
-           	<div class="title">APP - MVC</div>
-    	</div>
-    </div>
-<?php 
-    // var_dump(ABSPATH);
-    // var_dump(UP_ABSPATH);
-    // var_dump(HOME_URI);
-    // var_dump(HOME_URI . '/views/exemplo/');
-
-?>
+</div> <!-- .wrap -->
