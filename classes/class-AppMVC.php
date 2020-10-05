@@ -1,11 +1,11 @@
 <?php
 /**
- * TutsupMVC - Gerencia Models, Controllers e Views
+ * AppMVC - Gerencia Models, Controllers e Views
  *
  * @package TutsupMVC
  * @since 0.1
  */
-class TutsupMVC
+class AppMVC
 {
 
 	/**
@@ -183,6 +183,5 @@ class TutsupMVC
 			// echo '</pre>';
 		}
 	
-	} // get_url_data
-	
-} // class TutsupMVC
+	} // get_url_data	
+} 

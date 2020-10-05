@@ -1,22 +1,23 @@
 <?php
 /**
- * TutsupDB - Classe para gerenciamento da base de dados
+ * AppDB - Classe para gerenciamento da base de dados
  *
  * @package TutsupMVC
  * @since 0.1
  */
-class TutsupDB
+class AppDB
 {
 	/** DB properties */
-	public $host      = 'localhost', // Host da base de dados 
-	       $db_name   = 'tutsup',    // Nome do banco de dados
-	       $password  = '',          // Senha do usuário da base de dados
-	       $user      = 'root',      // Usuário da base de dados
-	       $charset   = 'utf8',      // Charset da base de dados
-	       $pdo       = null,        // Nossa conexão com o BD
-	       $error     = null,        // Configura o erro
-	       $debug     = false,       // Mostra todos os erros 
-	       $last_id   = null;        // Último ID inserido
+	protected
+		   $host      , // Host da base de dados 
+	       $db_name   ,    // Nome do banco de dados
+	       $password  ,          // Senha do usuário da base de dados
+	       $user      ,      // Usuário da base de dados
+	       $charset   ,      // Charset da base de dados
+	       $pdo       ,        // Nossa conexão com o BD
+	       $error     ,        // Configura o erro
+	       $debug     ,       // Mostra todos os erros 
+	       $last_id   ;        // Último ID inserido
 	
 	/**
 	 * Construtor da classe
@@ -50,7 +51,7 @@ class TutsupDB
 		$this->debug    = defined( 'DEBUG'       ) ? DEBUG       : $this->debug;
 	
 		// Conecta
-		$this->connect();
+		// $this->connect();
 		
 	} // __construct
 	

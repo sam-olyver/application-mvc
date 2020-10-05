@@ -27,7 +27,7 @@ function chk_array ( $array, $key ) {
  * O nome do arquivo deverá ser class-NomeDaClasse.php.
  * Por exemplo: para a classe TutsupMVC, o arquivo vai chamar class-TutsupMVC.php
  */
-function __autoload($class_name) {
+function My_autoload($class_name) {
 	$file = ABSPATH . '/classes/class-' . $class_name . '.php';
 	
 	if ( ! file_exists( $file ) ) {
@@ -36,5 +36,7 @@ function __autoload($class_name) {
 	}
 	
 	// Inclui o arquivo da classe
-    require_once $file;
+	require_once $file;
+
 } // __autoload
+

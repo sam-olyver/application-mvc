@@ -17,7 +17,7 @@ class LoginController extends MainController
 		
 		// Parametros da função
 		$parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
-	
+		
 		// Login não tem Model
 		
 		/** Carrega os arquivos do view **/

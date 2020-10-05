@@ -10,13 +10,13 @@ define( 'ABSPATH', dirname( __FILE__ ) );
 define( 'UP_ABSPATH', ABSPATH . '/views/_uploads' );
 
 // URL da home
-define( 'HOME_URI', 'http://127.0.0.1/Cursos/crud/' );
+define( 'HOME_URI', 'http://localhost:8081' );
 
 // Nome do host da base de dados
 define( 'HOSTNAME', 'localhost' );
 
 // Nome do DB
-define( 'DB_NAME', 'tutsup' );
+define( 'DB_NAME', 'db_app' );
 
 // Usuário do DB
 define( 'DB_USER', 'root' );
@@ -33,7 +33,7 @@ define( 'DEBUG', true );
 /**
  * Não edite daqui em diante
  */
-
+ 
 // Carrega o loader, que vai carregar a aplicação inteira
 require_once ABSPATH . '/loader.php';
 ?>
