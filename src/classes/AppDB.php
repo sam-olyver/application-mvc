@@ -50,9 +50,6 @@ class AppDB
 		$this->charset  = defined( 'DB_CHARSET'  ) ? DB_CHARSET  : $this->charset;
 		$this->debug    = defined( 'DEBUG'       ) ? DEBUG       : $this->debug;
 	
-		// Conecta
-		// $this->connect();
-		
 	} // __construct
 	
 	/**

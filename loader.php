@@ -20,7 +20,7 @@ if ( ! defined('DEBUG') || DEBUG === false ) {
 }
 
 // Funções globais
-require_once ABSPATH . '/functions/global-functions.php';
+require_once ABSPATH . '/src/functions/global-functions.php';
 // registra a função de autoload
 spl_autoload_register('My_autoload');
 

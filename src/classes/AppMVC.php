@@ -1,13 +1,13 @@
 <?php
 /**
- * AppMvc - Gerencia Models, Controllers e Views
+ * AppMVC - Gerencia Models, Controllers e Views
  *
- * @package AppMvc
+ * @package AppMVC
  * @since 0.1
  */
-class AppMvc
+class AppMVC
 {
- 
+
 	/**
 	 * $controlador
 	 *
@@ -45,7 +45,7 @@ class AppMvc
 	 *
 	 * @access private
 	 */
-	private $not_found = '/views/404.php';
+	private $not_found = '/includes/404.php';
 	
 	/**
 	 * Construtor para essa classe
@@ -58,7 +58,6 @@ class AppMvc
 		// Obtém os valores do controlador, ação e parâmetros da URL.
 		// E configura as propriedades da classe.
 		$this->get_url_data();
-		
 		/**
 		 * Verifica se o controlador existe. Caso contrário, adiciona o
 		 * controlador padrão (controllers/home-controller.php) e chama o método index().
@@ -66,7 +65,8 @@ class AppMvc
 		if ( ! $this->controlador ) {
 			
 			// Adiciona o controlador padrão
-			require_once ABSPATH . '/controllers/HomeController.php';
+			require_once ABSPATH . '/controllers/homeController.php';
+			
 			// Cria o objeto do controlador "home-controller.php"
 			// Este controlador deverá ter uma classe chamada HomeController
 			$this->controlador = new HomeController();
@@ -82,12 +82,12 @@ class AppMvc
 		// Se o arquivo do controlador não existir, não faremos nada
 		if ( ! file_exists( ABSPATH . '/controllers/' . $this->controlador . '.php' ) ) {
 			// Página não encontrada
-			require_once ABSPATH . '' . $this->not_found;
+			require_once ABSPATH . $this->not_found;
 			
 			// FIM :)
 			return;
 		}
-		
+				
 		// Inclui o arquivo do controlador
 		require_once ABSPATH . '/controllers/' . $this->controlador . '.php';
 		
@@ -100,14 +100,17 @@ class AppMvc
 		if ( ! class_exists( $this->controlador ) ) {
 			// Página não encontrada
 			require_once ABSPATH . $this->not_found;
- 
+
 			// FIM :)
 			return;
 		} // class_exists
 		
-		// Cria o objeto da classe do controlador e envia os parâmetros
+		// Cria o objeto da classe do controlador e envia os parâmentros
 		$this->controlador = new $this->controlador( $this->parametros );
- 
+		
+		// Remove caracteres inválidos do nome da ação (método)
+		$this->acao = preg_replace( '/[^a-zA-Z]/i', '', $this->acao );
+		
 		// Se o método indicado existir, executa o método e envia os parâmetros
 		if ( method_exists( $this->controlador, $this->acao ) ) {
 			$this->controlador->{$this->acao}( $this->parametros );
@@ -141,7 +144,6 @@ class AppMvc
 	 * http://www.example.com/controlador/acao/parametro1/parametro2/etc...
 	 */
 	public function get_url_data () {
-		
 		// Verifica se o parâmetro path foi enviado
 		if ( isset( $_GET['path'] ) ) {
 	
@@ -149,15 +151,15 @@ class AppMvc
 			$path = $_GET['path'];
 			
 			// Limpa os dados
-                        $path = rtrim($path, '/');
-                        $path = filter_var($path, FILTER_SANITIZE_URL);
+            $path = rtrim($path, '/');
+            $path = filter_var($path, FILTER_SANITIZE_URL);
             
 			// Cria um array de parâmetros
 			$path = explode('/', $path);
-			
+
 			// Configura as propriedades
 			$this->controlador  = chk_array( $path, 0 );
-			$this->controlador .= '-controller';
+			$this->controlador .= 'Controller';
 			$this->acao         = chk_array( $path, 1 );
 			
 			// Configura os parâmetros
@@ -169,7 +171,6 @@ class AppMvc
 				$this->parametros = array_values( $path );
 			}
 			
-			
 			// DEBUG
 			//
 			// echo $this->controlador . '<br>';
@@ -178,7 +179,5 @@ class AppMvc
 			// print_r( $this->parametros );
 			// echo '</pre>';
 		}
-	
-	} // get_url_data
-	
-} // class AppMvc
+	} // get_url_data	
+} 
